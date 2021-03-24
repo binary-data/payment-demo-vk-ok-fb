@@ -1,0 +1,26 @@
+{
+    "name": "binarydata/game-payment-demo",
+    "description": "A demo application for payments in VKontakte, Odnoklassniki and Facebook social networks",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Anton Belonovich",
+            "email": "tralick@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Binarydata\\PaymentDemo\\": "src/"
+        }
+    },
+    "require": {
+        "binarydata/shpongle": "dev-master",
+        "cycle/bootstrap": "^0.4.0",
+        "illuminate/collections": "^8.34"
+    }
+    ,
+    "require-dev": {
+        "roave/security-advisories": "dev-latest"
+    }
+}
