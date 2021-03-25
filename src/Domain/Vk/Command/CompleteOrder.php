@@ -22,6 +22,10 @@ final class CompleteOrder
             throw new RuntimeException("order with external id $externalId not found");
         }
 
+        if ($order->isCompleted()) {
+            return $order;
+        }
+
         $order->setStatus(OrderStatus::COMPLETED);
         $order->setExternalDate($externalDate);
         $order->setTotal($price);

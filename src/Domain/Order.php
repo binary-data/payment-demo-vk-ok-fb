@@ -70,4 +70,9 @@ final class Order
     {
         $this->total = $total;
     }
+
+    public function isCompleted(): bool
+    {
+        return $this->status === OrderStatus::COMPLETED;
+    }
 }
