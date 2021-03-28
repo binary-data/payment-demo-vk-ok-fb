@@ -1,5 +1,6 @@
 <!doctype html>
 
+<!--suppress JSUnresolvedVariable, JSUnresolvedFunction -->
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -17,6 +18,10 @@
     VK.init(function () {
         let buy = document.getElementById('buy');
         buy.onclick = () => VK.callMethod('showOrderBox', {type: 'item', item: 'awesome_1'});
+
+        VK.addCallback('onOrderSuccess', order_id => alert(`Order ${order_id} success!`));
+        VK.addCallback('onOrderFail', () => alert('Order failed!'));
+        VK.addCallback('onOrderCancel', () => alert('Order cancelled!'));
     }, () => {}, '5.131');
 </script>
 </html>

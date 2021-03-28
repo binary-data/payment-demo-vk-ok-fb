@@ -18,8 +18,6 @@ $container = (new ContainerBuilder())
     )
     ->build();
 
-$pipe = require ROOT . 'config/middleware.php';
-
 $creator = $container->get(ServerRequestCreatorInterface::class);
 $request = $creator->fromGlobals();
 

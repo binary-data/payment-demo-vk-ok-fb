@@ -5,8 +5,10 @@
 declare(strict_types=1);
 
 use Binarydata\PaymentDemo\Domain\OrderRepositoryInterface;
+use Binarydata\PaymentDemo\Domain\Vk\RemoteOrderRepositoryInterface;
 use Binarydata\PaymentDemo\Middleware\VkSignatureMiddleware;
 use Binarydata\PaymentDemo\Model\CycleOrderRepository;
+use Binarydata\PaymentDemo\Model\VkApiRemoteOrderRepository;
 use Binarydata\Shpongle\Service\Config\ConfigInterface;
 use Cycle\ORM\ORM;
 use Psr\Http\Message\ResponseFactoryInterface;
@@ -28,4 +30,8 @@ return [
         /** @noinspection PhpUndefinedVariableInspection */
         return $orm;
     },
+
+    RemoteOrderRepositoryInterface::class => function (ConfigInterface $c) {
+        return new VkApiRemoteOrderRepository($c->get('vk.serviceKey', ''));
+    }
 ];
