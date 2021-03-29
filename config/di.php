@@ -33,5 +33,5 @@ return [
 
     RemoteOrderRepositoryInterface::class => function (ConfigInterface $c) {
         return new VkApiRemoteOrderRepository($c->get('vk.serviceKey', ''));
-    }
+    },
 ];

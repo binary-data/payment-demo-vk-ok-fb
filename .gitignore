@@ -3,3 +3,4 @@
 
 *.sqlite
 /config/*.config.php
+/log/*.log

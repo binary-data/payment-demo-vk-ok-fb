@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use Binarydata\PaymentDemo\Middleware\ErrorHandlerMiddleware;
+use Binarydata\PaymentDemo\Middleware\VkRequestLoggerMiddleware;
 use Binarydata\PaymentDemo\Middleware\VkSignatureMiddleware;
 use Binarydata\Shpongle\Http\Middleware\ActionDispatcherMiddleware;
 use Binarydata\Shpongle\Http\Middleware\RouterMiddleware;
@@ -16,6 +17,7 @@ return [
     ],
 
     'vk' => [
+        VkRequestLoggerMiddleware::class,
         VkSignatureMiddleware::class,
     ],
 ];
