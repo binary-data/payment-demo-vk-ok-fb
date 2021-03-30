@@ -1,0 +1,41 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Payment demo</title>
+</head>
+
+<body>
+
+<button id="buy">Buy</button>
+
+<script type="text/javascript" src="//api.ok.ru/js/fapi5.js" ></script>
+<script>
+    const rParams = FAPI.Util.getRequestParameters();
+    FAPI.init(
+        rParams['api_server'],
+        rParams['apiconnection'],
+        () => document.getElementById('buy').onclick = () => FAPI.UI.showPayment(
+            'Awesome pack',
+            'Awesome pack',
+            'awesome_1',
+            1,
+            null,
+            null,
+            'ok',
+            'true'
+        ),
+        () => alert('Ошибка инициализации')
+    );
+
+    function API_callback(method, result, data) {
+        if (method === 'showPayment') {
+            console.log(result);
+            console.log(data);
+        }
+    }
+</script>
+</body>
+
+</html>

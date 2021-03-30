@@ -18,7 +18,8 @@
         "binarydata/shpongle": "dev-master",
         "cycle/bootstrap": "^0.4.0",
         "illuminate/collections": "^8.34",
-        "monolog/monolog": "^2.2"
+        "monolog/monolog": "^2.2",
+        "ext-dom": "*"
     }
     ,
     "require-dev": {
